@@ -14,6 +14,8 @@ use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\Historia_inicio_sesionController;
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\UsuarioController; ///agregando ruta de controlador de usuario
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,16 +48,6 @@ Route::get('alumno/{historia_inicio_sesion}', [Historia_inicio_sesionController:
 Route::get('alumno/{historial}', [HistorialController::class, 'show']);
 Route::get('alumno/{materia}', [MateriaController::class, 'show']);
 Route::get('alumno/{municipio}', [MunicipioController::class, 'show']);
-
-
-
-
-
-
-
-
-
-
 
 
 Route::get('alumno/{id_alumno}', function ($id_alumno) {
@@ -375,3 +367,16 @@ Route::get('municipio/{id_municipio}', function ($id_municipio) {
 Route::get('municipio/{nombre_municipio}', function ($nombre_municipio) {
     return "Nombre del municipio: $nombre_municipio";
  });
+
+
+
+
+
+
+
+
+
+//////AGREGANDO RUTA GET PARA CONTROLADOR USUARIO
+
+Route::get('usuario/{usuario}', function ($usuario) {
+    return "Usuario: $usuario";
