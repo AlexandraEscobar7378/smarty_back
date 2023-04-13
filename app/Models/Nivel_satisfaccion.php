@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class Nivel_satisfaccion extends Model
 {
     use HasFactory;
-    protected $table = 'usuario';
+    protected $table = 'nivel_satisfaccion';
 
     public $timestamps=false;
     protected $fillable=[
-        "nombre_usuario",
-        "contrasena",
+        "estrella",
+        "comentario",
         "fecha_registro",
-        "fecha_actualizacion",
-        "estado",
+        "fecha_actualizacion"
         
     ];
 }

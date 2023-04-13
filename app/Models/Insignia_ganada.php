@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class Insignia_ganada extends Model
 {
     use HasFactory;
-    protected $table = 'usuario';
+    protected $table = 'insignia_ganada';
 
     public $timestamps=false;
     protected $fillable=[
-        "nombre_usuario",
-        "contrasena",
-        "fecha_registro",
-        "fecha_actualizacion",
-        "estado",
+        "cant_insignia_ganada"
         
     ];
 }

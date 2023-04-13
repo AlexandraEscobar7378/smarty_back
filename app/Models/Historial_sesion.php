@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class Historial_sesion extends Model
 {
     use HasFactory;
-    protected $table = 'usuario';
+    protected $table = 'historial_sesion';
 
     public $timestamps=false;
     protected $fillable=[
-        "nombre_usuario",
-        "contrasena",
-        "fecha_registro",
-        "fecha_actualizacion",
-        "estado",
+        "fecha_inicio_sesion",
+        "fecha_cierre_sesion"
         
     ];
 }

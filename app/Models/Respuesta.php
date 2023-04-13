@@ -7,18 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Respuesta extends Model
 {
-
     use HasFactory;
-    protected $table = 'smarty';
-    //desactivamos la fechas automaticas
-    public $timestamps = false;
-     // Campos que usara los INSERT
-     protected $fillable = [
-        'texto_opcion',
-        'es_correcta',
-        'fecha_registro',
-        'fecha_actualizacion',
-        'id_pregunta',
+    protected $table = 'respuesta';
+
+    public $timestamps=false;
+    protected $fillable=[
+        "texto_opcion",
+        "es_correcta",
+        "fecha_registro",
+        "fecha_actualizacion"
         
     ];
 }

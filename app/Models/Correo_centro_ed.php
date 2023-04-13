@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class Correo_centro_ed extends Model
 {
     use HasFactory;
-    protected $table = 'usuario';
+    protected $table = 'correo_centro_ed';
 
     public $timestamps=false;
     protected $fillable=[
-        "nombre_usuario",
-        "contrasena",
+        "correo",
         "fecha_registro",
         "fecha_actualizacion",
         "estado",
