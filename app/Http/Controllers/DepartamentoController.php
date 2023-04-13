@@ -3,28 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Departamento;
+use Datetime;
 
 class DepartamentoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    /// METODO INSERT PARA AGREGAR LOS DEPARTAMENTOS:
+    public function insert(Request $request)
     {
-        //
+        $datos = array(
+        "nombre_departamento" => $request -> nombre,
+        );
+        
+        $nuevoDepartamento = new Departamento($datos);
+        $nuevoDepartamento -> save();
+        
+        return response()->json($nuevoDepartemento);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    
+    ///METODO LISTAR PARA MOSTRAR LOS DEPARTAMENTOS:
+    public function all(Request $request)
     {
-        //
+    
+    $departamento = Departamento::where()->select("nombre_departamento", "id");
+    if($request -> has('order'))
+    {
+    
+    $filtro = ($request -> has('filter'))? $request -> filter: "id";
+    $departamento = $departamento -> get();
+    
+    return response()->json($departamento);
+    
     }
+    
+  }
+    
 
     /**
      * Store a newly created resource in storage.
